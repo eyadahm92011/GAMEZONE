@@ -2271,7 +2271,7 @@ body[unresolved] {opacity: 0; display: block; overflow: hidden; position: relati
         document.querySelectorAll(".add-btn").forEach(button => {
             button.addEventListener("click", (e) => {
                 const card = e.target.closest(".game-card");
-                const name = card.dataset.name;
+                if (!auth.currentUser) { alert("LOGIN FIRST to add games to your cart."); openAccount(); return; } const name = card.dataset.name;
                 const price = parseFloat(card.dataset.price);
 
                 addToCart(name, price);
