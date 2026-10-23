@@ -1681,7 +1681,7 @@ body[unresolved] {opacity: 0; display: block; overflow: hidden; position: relati
         const app = initializeApp(firebaseConfig);
         const auth = getAuth(app);
         const googleProvider = new GoogleAuthProvider();
-        const githubProvider = new GithubAuthProvider();
+        const githubProvider = new GithubAuthProvider(); let oauthPopupInProgress = false;
 
         // DOM Elements
         const searchInput = document.getElementById("searchInput");
@@ -1899,7 +1899,7 @@ body[unresolved] {opacity: 0; display: block; overflow: hidden; position: relati
                 alert(action + " needs an approved website address.\n\nOpen this page through http://localhost (not by double-clicking the HTML file), then add localhost to Firebase Console → Authentication → Settings → Authorized domains. If you are using a hosted site, add that site's domain instead.");
                 return;
             }
-            if (code.includes("operation-not-allowed")) {
+            if (code === "auth/cancelled-popup-request") { alert(action + " was interrupted because another sign-in popup replaced it. Click once and wait for sign-in to finish."); return; } if (code === "auth/popup-blocked") { alert(action + " was blocked by your browser. Allow pop-ups for eyadahm92011.github.io, then try again."); return; } if (code === "auth/popup-closed-by-user") { alert(action + " was closed before sign-in finished. Complete sign-in and leave the window open until GAMEZONE returns."); return; } if (code.includes("operation-not-allowed")) {
                 alert(action + " is not enabled yet. In Firebase Console, open Authentication → Sign-in method and enable this provider.");
                 return;
             }
@@ -1935,7 +1935,7 @@ body[unresolved] {opacity: 0; display: block; overflow: hidden; position: relati
         // Google Sign-In
         googleLoginBtn.addEventListener("click", async () => {
             try {
-                await signInWithPopup(auth, googleProvider);
+                if (oauthPopupInProgress) return; oauthPopupInProgress = true; googleLoginBtn.disabled = true; githubLoginBtn.disabled = true; try { await signInWithPopup(auth, googleProvider); } finally { oauthPopupInProgress = false; googleLoginBtn.disabled = false; githubLoginBtn.disabled = false; }
             } catch (err) {
                 showAuthError("Google sign-in", err);
             }
@@ -1944,7 +1944,7 @@ body[unresolved] {opacity: 0; display: block; overflow: hidden; position: relati
         // GitHub Sign-In
         githubLoginBtn.addEventListener("click", async () => {
             try {
-                await signInWithPopup(auth, githubProvider);
+                if (oauthPopupInProgress) return; oauthPopupInProgress = true; googleLoginBtn.disabled = true; githubLoginBtn.disabled = true; try { await signInWithPopup(auth, githubProvider); } finally { oauthPopupInProgress = false; googleLoginBtn.disabled = false; githubLoginBtn.disabled = false; }
             } catch (err) {
                 showAuthError("GitHub sign-in", err);
             }
