@@ -1,7 +1,6 @@
 <!DOCTYPE html>
-<html lang="en"><head><style>body {transition: opacity ease-in 0.2s; } 
-body[unresolved] {opacity: 0; display: block; overflow: hidden; position: relative; } 
-</style>
+<html lang="en">
+<head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>GAMEZONE | Find Your Next Game</title>
@@ -16,14 +15,14 @@ body[unresolved] {opacity: 0; display: block; overflow: hidden; position: relati
 
         <nav>
             <a href="#home">Home</a>
-            <a href="#games">Games</a>
-            <a href="#categories">Categories</a>
+            <a href="#categories">Games</a>
+            <a href="passes.html">Passes &amp; Coins</a>
             <a href="#about">About</a>
         </nav>
 
         <div class="nav-right">
             <button id="themeBtn" type="button" aria-label="Switch color theme" title="Switch color theme">☀️</button><label class="currency-setting" title="Approximate display rate: 1 USD = 55.30 EGP (checked Oct 23, 2026)"><span>Currency</span><select id="currencySelect" aria-label="Display currency"><option value="USD">$ USD</option><option value="EGP">EGP</option></select></label>
-            <button id="accountNavBtn" class="account-nav-btn">👤 <span id="accountNavText">eyad ahmed</span></button>
+            <button id="accountNavBtn" class="account-nav-btn">👤 <span id="accountNavText">Account</span></button>
             <button class="cart" id="cartBtn" type="button" aria-label="Open shopping cart">🛒 <span id="cartCount" aria-live="polite">0</span></button>
         </div>
     </header>
@@ -33,12 +32,12 @@ body[unresolved] {opacity: 0; display: block; overflow: hidden; position: relati
     <div class="drawer-sidebar" id="accountSidebar">
         <div class="drawer-header">
             <h2 id="accountTitle">My Account</h2>
-            <button class="close-drawer" id="closeAccountBtn">×</button>
+            <button class="close-drawer" id="closeAccountBtn">&times;</button>
         </div>
 
         <div class="account-body" id="accountBody">
             <!-- LOGIN / SIGNUP FORM (Visible when logged out) -->
-            <div id="authForms" class="hidden">
+            <div id="authForms">
                 <div class="auth-tabs">
                     <button class="auth-tab active" id="tabLogin">Login</button>
                     <button class="auth-tab" id="tabRegister">Register</button>
@@ -48,11 +47,11 @@ body[unresolved] {opacity: 0; display: block; overflow: hidden; position: relati
                 <form id="loginForm" class="auth-form active">
                     <div class="form-group">
                         <label>Email</label>
-                        <input type="email" id="loginUser" placeholder="Enter your email" required="">
+                        <input type="email" id="loginUser" placeholder="Enter your email" required>
                     </div>
                     <div class="form-group">
                         <label>Password</label>
-                        <input type="password" id="loginPass" placeholder="Enter password" autocomplete="current-password" required="">
+                        <input type="password" id="loginPass" placeholder="Enter password" autocomplete="current-password" required>
                     </div>
                     <button type="submit" class="auth-submit-btn">Log In</button>
                 </form>
@@ -61,15 +60,15 @@ body[unresolved] {opacity: 0; display: block; overflow: hidden; position: relati
                 <form id="registerForm" class="auth-form">
                     <div class="form-group">
                         <label>Username</label>
-                        <input type="text" id="regUser" placeholder="Choose a username" required="">
+                        <input type="text" id="regUser" placeholder="Choose a username" required>
                     </div>
                     <div class="form-group">
                         <label>Email</label>
-                        <input type="email" id="regEmail" placeholder="Enter your email" required="">
+                        <input type="email" id="regEmail" placeholder="Enter your email" required>
                     </div>
                     <div class="form-group">
                         <label>Password</label>
-                        <input type="password" id="regPass" placeholder="Create password" minlength="6" autocomplete="new-password" required="">
+                        <input type="password" id="regPass" placeholder="Create password" minlength="6" autocomplete="new-password" required>
                     </div>
                     <button type="submit" class="auth-submit-btn">Create Account</button>
                 </form>
@@ -82,17 +81,17 @@ body[unresolved] {opacity: 0; display: block; overflow: hidden; position: relati
                 <div class="oauth-buttons">
                     <button type="button" class="oauth-btn google-btn" id="googleLoginBtn">
                         <svg width="18" height="18" viewBox="0 0 24 24">
-                            <path fill="#4285F4" d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z"></path>
-                            <path fill="#34A853" d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z"></path>
-                            <path fill="#FBBC05" d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.06H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.94l2.85-2.22.81-.63z"></path>
-                            <path fill="#EA4335" d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.06l3.66 2.84c.87-2.6 3.3-4.52 6.16-4.52z"></path>
+                            <path fill="#4285F4" d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z"/>
+                            <path fill="#34A853" d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z"/>
+                            <path fill="#FBBC05" d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.06H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.94l2.85-2.22.81-.63z"/>
+                            <path fill="#EA4335" d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.06l3.66 2.84c.87-2.6 3.3-4.52 6.16-4.52z"/>
                         </svg>
                         Continue with Google
                     </button>
 
                     <button type="button" class="oauth-btn github-btn" id="githubLoginBtn">
                         <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
-                            <path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"></path>
+                            <path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/>
                         </svg>
                         Continue with GitHub
                     </button>
@@ -100,10 +99,10 @@ body[unresolved] {opacity: 0; display: block; overflow: hidden; position: relati
             </div>
 
             <!-- USER DASHBOARD (Visible when logged in) -->
-            <div id="userProfile" class="user-profile">
-                <div class="profile-avatar" id="profileAvatar"><img src="https://lh3.googleusercontent.com/a/ACg8ocL_Z9IKTYfWx2uIR5uMafXz3PP-CFRz61E2Xlm2cJoEWDsc4wk=s96-c" alt="Avatar"></div>
-                <h3 id="profileName">eyad ahmed</h3>
-                <p id="profileEmail" class="profile-email">eyad.ahm92011@gmail.com</p>
+            <div id="userProfile" class="user-profile hidden">
+                <div class="profile-avatar" id="profileAvatar">🎮</div>
+                <h3 id="profileName">User</h3>
+                <p id="profileEmail" class="profile-email">user@example.com</p>
                 
                 <div class="profile-stats">
                     <div class="stat-box">
@@ -111,7 +110,7 @@ body[unresolved] {opacity: 0; display: block; overflow: hidden; position: relati
                         <span class="stat-label">Orders</span>
                     </div>
                     <div class="stat-box">
-                        <span class="stat-num" id="userPoints">★ 10</span>
+                        <span class="stat-num" id="userPoints">★ 0</span>
                         <span class="stat-label">Points</span>
                     </div>
                 </div>
@@ -126,13 +125,15 @@ body[unresolved] {opacity: 0; display: block; overflow: hidden; position: relati
     <div class="drawer-sidebar" id="cartSidebar">
         <div class="drawer-header">
             <h2>Your Cart</h2>
-            <button class="close-drawer" id="closeCartBtn">×</button>
+            <button class="close-drawer" id="closeCartBtn">&times;</button>
         </div>
-        <div class="cart-items" id="cartItems"><p class="empty-cart-msg">Your cart is empty.</p></div>
+        <div class="cart-items" id="cartItems">
+            <p class="empty-cart-msg">Your cart is empty.</p>
+        </div>
         <div class="cart-footer">
-            <p class="cart-offer-note" id="cartOfferNote" role="status" hidden=""></p><div class="cart-total">
+            <p class="cart-offer-note" id="cartOfferNote" role="status"></p><div class="cart-total">
                 <span>Total:</span>
-                <strong id="cartTotal">EGP&nbsp;0.00</strong>
+                <strong id="cartTotal">$0.00</strong>
             </div>
             <button class="checkout-btn" id="checkoutBtn">Proceed to Checkout</button>
         </div>
@@ -143,7 +144,7 @@ body[unresolved] {opacity: 0; display: block; overflow: hidden; position: relati
         <section class="checkout-panel" role="dialog" aria-modal="true" aria-labelledby="checkoutTitle">
             <div class="checkout-heading">
                 <div><p class="checkout-eyebrow">EMAIL VERIFICATION · WHATSAPP ORDER</p><h2 id="checkoutTitle">Complete your order</h2></div>
-                <button class="close-drawer" id="closeCheckoutBtn" type="button" aria-label="Close checkout">×</button>
+                <button class="close-drawer" id="closeCheckoutBtn" type="button" aria-label="Close checkout">&times;</button>
             </div>
             <div class="checkout-steps" aria-label="Checkout progress">
                 <span class="checkout-step active" data-step-label="email">1. Email</span>
@@ -155,22 +156,22 @@ body[unresolved] {opacity: 0; display: block; overflow: hidden; position: relati
                 <h3>Send an email</h3>
                 <p>We’ll email a one-time six-digit code to your GAMEZONE account address.</p>
                 <label for="checkoutEmail">GAMEZONE account email</label>
-                <input id="checkoutEmail" type="email" autocomplete="email" placeholder="you@example.com" readonly="" required="">
+                <input id="checkoutEmail" type="email" autocomplete="email" placeholder="you@example.com" readonly required>
                 <button class="checkout-btn" id="sendCheckoutEmailBtn" type="button">Send verification code</button>
             </section>
-            <section class="checkout-stage" id="checkoutDetailsStage" hidden="">
+            <section class="checkout-stage" id="checkoutDetailsStage" hidden>
                 <h3>Verify email and add your details</h3>
                 <p>Enter the six-digit code, your full name, and your age. You must be 15 or older to continue.</p>
                 <label for="checkoutEmailCode">Email code</label>
-                <input id="checkoutEmailCode" type="text" inputmode="numeric" autocomplete="one-time-code" pattern="[0-9]{6}" maxlength="6" placeholder="123456" required="">
+                <input id="checkoutEmailCode" type="text" inputmode="numeric" autocomplete="one-time-code" pattern="[0-9]{6}" maxlength="6" placeholder="123456" required>
                 <label for="checkoutFullName">Full name</label>
-                <input id="checkoutFullName" type="text" autocomplete="name" maxlength="100" placeholder="Enter your full name" required="">
+                <input id="checkoutFullName" type="text" autocomplete="name" maxlength="100" placeholder="Enter your full name" required>
                 <label for="checkoutAge">Age (15+)</label>
-                <input id="checkoutAge" type="number" inputmode="numeric" min="15" max="120" step="1" placeholder="Enter your age" required="">
+                <input id="checkoutAge" type="number" inputmode="numeric" min="15" max="120" step="1" placeholder="Enter your age" required>
                 <button class="checkout-btn" id="continueCheckoutDetailsBtn" type="button">Verify code and continue</button>
                 <button class="checkout-link-btn" id="resendCheckoutEmailBtn" type="button">Resend code</button>
             </section>
-            <section class="checkout-stage" id="checkoutWhatsAppStage" hidden="">
+            <section class="checkout-stage" id="checkoutWhatsAppStage" hidden>
                 <h3>Send your order</h3>
                 <p>Your email, name, age, and order summary will be prefilled in WhatsApp. Review the message before sending.</p>
                 <button class="checkout-btn" id="whatsappOrderBtn" type="button">Go to WhatsApp</button>
@@ -194,6 +195,7 @@ body[unresolved] {opacity: 0; display: block; overflow: hidden; position: relati
 
             <a href="#games" class="hero-btn">EXPLORE GAMES</a>
             <a href="#neonGame" class="hero-btn mini-game-hero-btn">PLAY MINI GAME</a>
+            <a href="passes.html" class="hero-btn">PASSES &amp; COINS</a>
         </div>
 
         <div class="hero-image">
@@ -206,7 +208,12 @@ body[unresolved] {opacity: 0; display: block; overflow: hidden; position: relati
     <section class="search-section">
         <div class="search-box-wrapper">
             <div class="search-input-container">
-                <input type="text" id="searchInput" placeholder="Search for games, coins, or items..." autocomplete="off">
+                <input
+                    type="text"
+                    id="searchInput"
+                    placeholder="Search for games, coins, or items..."
+                    autocomplete="off"
+                >
                 <span class="search-icon">🔍</span>
             </div>
 
@@ -223,7 +230,7 @@ body[unresolved] {opacity: 0; display: block; overflow: hidden; position: relati
                     <li class="dropdown-item" data-search="Grand Theft Auto V">
                         <span class="item-badge gta-badge">🚘</span>
                         <div class="item-info">
-                            <span class="item-name">GTA V Coins &amp; Items</span>
+                            <span class="item-name">GTA V Coins & Items</span>
                         </div>
                     </li>
                     <li class="dropdown-item" data-search="Red Dead Redemption 2">
@@ -241,7 +248,7 @@ body[unresolved] {opacity: 0; display: block; overflow: hidden; position: relati
                     <li class="dropdown-item" data-search="Minecraft">
                         <span class="item-badge minecraft-badge">⛏️</span>
                         <div class="item-info">
-                            <span class="item-name">Minecraft Items &amp; Coins</span>
+                            <span class="item-name">Minecraft Items & Coins</span>
                         </div>
                     </li>
                     <li class="dropdown-item" data-search="Forza Horizon 5">
@@ -263,7 +270,7 @@ body[unresolved] {opacity: 0; display: block; overflow: hidden; position: relati
 
     <!-- CATEGORIES -->
     <section class="categories" id="categories">
-        <h2>Categories</h2>
+        <h2>GAMES</h2>
 
         <div class="category-buttons">
             <button class="category active" data-category="all">All</button>
@@ -289,7 +296,7 @@ body[unresolved] {opacity: 0; display: block; overflow: hidden; position: relati
                     <p>Action • Open world • Upgraded visuals and faster loading</p>
 
                     <div class="game-bottom">
-                        <strong data-base-label="$29.99">EGP&nbsp;1,658.45</strong>
+                        <strong>$29.99</strong>
                         <button class="add-btn" type="button" aria-label="Add item to cart">+</button>
                     </div>
                 </div>
@@ -303,7 +310,7 @@ body[unresolved] {opacity: 0; display: block; overflow: hidden; position: relati
                     <p>Adventure • Open World</p>
 
                     <div class="game-bottom">
-                        <strong data-base-label="$39.99">EGP&nbsp;2,211.45</strong>
+                        <strong>$39.99</strong>
                         <button class="add-btn" type="button" aria-label="Add item to cart">+</button>
                     </div>
                 </div>
@@ -317,7 +324,7 @@ body[unresolved] {opacity: 0; display: block; overflow: hidden; position: relati
                     <p>Sports • Football</p>
 
                     <div class="game-bottom">
-                        <strong data-base-label="$69.99">EGP&nbsp;3,870.45</strong>
+                        <strong>$69.99</strong>
                         <button class="add-btn" type="button" aria-label="Add item to cart">+</button>
                     </div>
                 </div>
@@ -331,7 +338,7 @@ body[unresolved] {opacity: 0; display: block; overflow: hidden; position: relati
                     <p>Adventure • Sandbox</p>
 
                     <div class="game-bottom">
-                        <strong data-base-label="$29.99">EGP&nbsp;1,658.45</strong>
+                        <strong>$29.99</strong>
                         <button class="add-btn" type="button" aria-label="Add item to cart">+</button>
                     </div>
                 </div>
@@ -339,7 +346,7 @@ body[unresolved] {opacity: 0; display: block; overflow: hidden; position: relati
 
             <div class="game-card" data-category="racing" data-name="Forza Horizon 6" data-price="69.99">
                 <div class="game-img cover"><img src="https://cdn.forza.net/strapi-uploads/assets/small_Forza_Horizon6_Pre_Order_12_Cover_Car_City_16x9_b70ab406b0.jpg" alt="Forza Horizon 6 cover" loading="lazy"><span class="cover-tag">JAPAN AWAITS</span></div>
-                <div class="game-info"><h3>Forza Horizon 6</h3><p>Racing • Open world • Explore Japan in over 550 real-world cars</p><div class="game-bottom"><strong data-base-label="$69.99">EGP&nbsp;3,870.45</strong><button class="add-btn" type="button" aria-label="Add item to cart">+</button></div></div>
+                <div class="game-info"><h3>Forza Horizon 6</h3><p>Racing • Open world • Explore Japan in over 550 real-world cars</p><div class="game-bottom"><strong>$69.99</strong><button class="add-btn" type="button" aria-label="Add item to cart">+</button></div></div>
             </div>
             <div class="game-card" data-category="racing" data-name="Forza Horizon 5" data-price="59.99">
                 <div class="game-img cover"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/1551360/header.jpg?t=1788546569" alt="Forza Horizon 5 cover" loading="lazy"><span class="cover-tag">GAMEZONE PICK</span></div>
@@ -349,7 +356,7 @@ body[unresolved] {opacity: 0; display: block; overflow: hidden; position: relati
                     <p>Racing • Open World</p>
 
                     <div class="game-bottom">
-                        <strong data-base-label="$59.99">EGP&nbsp;3,317.45</strong>
+                        <strong>$59.99</strong>
                         <button class="add-btn" type="button" aria-label="Add item to cart">+</button>
                     </div>
                 </div>
@@ -358,55 +365,62 @@ body[unresolved] {opacity: 0; display: block; overflow: hidden; position: relati
 
             <div class="game-card" data-category="action" data-name="Grand Theft Auto VI GTA 6" data-price="79.99">
                 <div class="game-img cover gta6"><img src="https://www.rockstargames.com/VI/_next/static/media/poster_full.0az_iud2g3y4j.jpg?akim=1&amp;imdensity=1&amp;imwidth=1920" alt="Grand Theft Auto VI artwork" loading="lazy"><span class="cover-tag">COMING NOV 19, 2026</span></div>
-                <div class="game-info"><h3>Grand Theft Auto VI</h3><p>Action • Open world • Jason and Lucia in Vice City</p><div class="game-bottom"><strong data-base-label="$79.99 • Pre-order">EGP&nbsp;4,423.45 • Pre-order</strong><button class="add-btn" type="button" aria-label="Add item to cart">+</button></div></div>
+                <div class="game-info"><h3>Grand Theft Auto VI</h3><p>Action • Open world • Jason and Lucia in Vice City</p><div class="game-bottom"><strong>$79.99 • Pre-order</strong><button class="add-btn" type="button" aria-label="Add item to cart">+</button></div></div>
             </div>
 
             <div class="game-card" data-category="sports" data-name="EA SPORTS FC 27 FC 27" data-price="69.99">
                 <div class="game-img cover"><img src="https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/4080220/ff6a3779f1ca83aae8ad3878454f6c11008ea24d/header.jpg?t=1790973254" alt="EA SPORTS FC 27 cover" loading="lazy"><span class="cover-tag">FOOTBALL</span></div>
-                <div class="game-info"><h3>EA SPORTS FC 27</h3><p>Sports • Football • Clubs, Ultimate Team, and The Grounds</p><div class="game-bottom"><strong data-base-label="$69.99">EGP&nbsp;3,870.45</strong><button class="add-btn" type="button" aria-label="Add item to cart">+</button></div></div>
+                <div class="game-info"><h3>EA SPORTS FC 27</h3><p>Sports • Football • Clubs, Ultimate Team, and The Grounds</p><div class="game-bottom"><strong>$69.99</strong><button class="add-btn" type="button" aria-label="Add item to cart">+</button></div></div>
             </div>
 
             <div class="game-card" data-category="sports" data-name="NBA 2K26" data-price="69.99">
                 <div class="game-img cover"><img src="https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/3472040/f7e126add75c3b09779b44cd349be93d31b0a80b/header.jpg?t=1786115051" alt="NBA 2K26 cover" loading="lazy"><span class="cover-tag">BASKETBALL</span></div>
-                <div class="game-info"><h3>NBA 2K26</h3><p>Sports • Basketball • MyCAREER, MyTEAM, and MyNBA</p><div class="game-bottom"><strong data-base-label="$69.99">EGP&nbsp;3,870.45</strong><button class="add-btn" type="button" aria-label="Add item to cart">+</button></div></div>
+                <div class="game-info"><h3>NBA 2K26</h3><p>Sports • Basketball • MyCAREER, MyTEAM, and MyNBA</p><div class="game-bottom"><strong>$69.99</strong><button class="add-btn" type="button" aria-label="Add item to cart">+</button></div></div>
             </div>
 
             <div class="game-card" data-category="action" data-name="Call of Duty Modern Warfare 4" data-price="69.99">
                 <div class="game-img cover"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4435490/0c492be3204835d71e8b454b6eb1817f8ff68c0d/header.jpg?t=1792728107" alt="Call of Duty Modern Warfare 4 cover" loading="lazy"><span class="cover-tag">NEW RELEASE</span></div>
-                <div class="game-info"><h3>Call of Duty®: Modern Warfare® 4</h3><p>Action • FPS • Campaign, multiplayer, and co-op</p><div class="game-bottom"><strong data-base-label="$69.99">EGP&nbsp;3,870.45</strong><button class="add-btn" type="button" aria-label="Add item to cart">+</button></div></div>
+                <div class="game-info"><h3>Call of Duty®: Modern Warfare® 4</h3><p>Action • FPS • Campaign, multiplayer, and co-op</p><div class="game-bottom"><strong>$69.99</strong><button class="add-btn" type="button" aria-label="Add item to cart">+</button></div></div>
             </div>
 
             <div class="game-card" data-category="adventure" data-name="The Blood of Dawnwalker" data-price="69.99">
                 <div class="game-img cover"><img src="https://static.actugaming.net/media/2025/06/the-blood-of-dawnwalker-jaquette-1.jpg" alt="The Blood of Dawnwalker cover" loading="lazy"><span class="cover-tag">DARK FANTASY RPG</span></div>
-                <div class="game-info"><h3>The Blood of Dawnwalker</h3><p>Action RPG • Open world • A human by day, vampire by night</p><div class="game-bottom"><strong data-base-label="$69.99">EGP&nbsp;3,870.45</strong><button class="add-btn" type="button" aria-label="Add item to cart">+</button></div></div>
+                <div class="game-info"><h3>The Blood of Dawnwalker</h3><p>Action RPG • Open world • A human by day, vampire by night</p><div class="game-bottom"><strong>$69.99</strong><button class="add-btn" type="button" aria-label="Add item to cart">+</button></div></div>
             </div>
 
             <div class="game-card" data-category="action" data-name="Marvel Spider-Man 2" data-price="59.99">
                 <div class="game-img cover"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/2651280/header.jpg" alt="Marvel's Spider-Man 2 cover" loading="lazy"><span class="cover-tag">BE GREATER. TOGETHER.</span></div>
-                <div class="game-info"><h3>Marvel’s Spider-Man 2</h3><p>Action • Open world • Play as Peter Parker and Miles Morales</p><div class="game-bottom"><strong data-base-label="$59.99">EGP&nbsp;3,317.45</strong><button class="add-btn" type="button" aria-label="Add item to cart">+</button></div></div>
+                <div class="game-info"><h3>Marvel’s Spider-Man 2</h3><p>Action • Open world • Play as Peter Parker and Miles Morales</p><div class="game-bottom"><strong>$59.99</strong><button class="add-btn" type="button" aria-label="Add item to cart">+</button></div></div>
             </div>
 
             <div class="game-card" data-category="action" data-name="Cyberpunk 2077" data-price="59.99">
                 <div class="game-img cover"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/1091500/header.jpg" alt="Cyberpunk 2077 cover" loading="lazy"><span class="cover-tag">NIGHT CITY</span></div>
-                <div class="game-info"><h3>Cyberpunk 2077</h3><p>Action RPG • Open world • Become V and make your name in Night City</p><div class="game-bottom"><strong data-base-label="$59.99">EGP&nbsp;3,317.45</strong><button class="add-btn" type="button" aria-label="Add item to cart">+</button></div></div>
+                <div class="game-info"><h3>Cyberpunk 2077</h3><p>Action RPG • Open world • Become V and make your name in Night City</p><div class="game-bottom"><strong>$59.99</strong><button class="add-btn" type="button" aria-label="Add item to cart">+</button></div></div>
             </div>
             <div class="game-card" data-category="racing" data-name="Forza Motorsport" data-price="59.99">
                 <div class="game-img cover"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/2440510/header.jpg" alt="Forza Motorsport cover" loading="lazy"><span class="cover-tag">BUILT FOR MOTORSPORT</span></div>
-                <div class="game-info"><h3>Forza Motorsport</h3><p>Racing • Simulation • Build your car and race on world-famous tracks</p><div class="game-bottom"><strong data-base-label="$59.99">EGP&nbsp;3,317.45</strong><button class="add-btn" type="button" aria-label="Add item to cart">+</button></div></div>
+                <div class="game-info"><h3>Forza Motorsport</h3><p>Racing • Simulation • Build your car and race on world-famous tracks</p><div class="game-bottom"><strong>$59.99</strong><button class="add-btn" type="button" aria-label="Add item to cart">+</button></div></div>
             </div>
             <div class="game-card" data-category="adventure" data-name="Schedule I" data-price="19.99">
                 <div class="game-img cover"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/3164500/header.jpg" alt="Schedule I cover" loading="lazy"><span class="cover-tag">BUILD YOUR EMPIRE</span></div>
-                <div class="game-info"><h3>Schedule I</h3><p>Simulation • Strategy • Build a criminal empire with friends</p><div class="game-bottom"><strong data-base-label="$19.99">EGP&nbsp;1,105.45</strong><button class="add-btn" type="button" aria-label="Add item to cart">+</button></div></div>
+                <div class="game-info"><h3>Schedule I</h3><p>Simulation • Strategy • Build a criminal empire with friends</p><div class="game-bottom"><strong>$19.99</strong><button class="add-btn" type="button" aria-label="Add item to cart">+</button></div></div>
             </div>
 
         </div>
+    </section>
+
+    <!-- PASSES & COINS LINK -->
+    <section class="games passes-teaser" id="passes">
+        <h2>Game Passes &amp; Coins</h2>
+        <p>Game Pass, PlayStation Plus, Xbox Live and Free Fire coins.</p>
+        <a href="passes.html" class="hero-btn">BROWSE PASSES &amp; COINS</a>
     </section>
 
     <section id="neonGame" class="mini-game-section">
         <div class="mini-game-card">
             <div class="mini-game-heading">
                 <div><span class="mini-game-kicker">PLAY FOR FREE</span><h2>Neon Dodger</h2><p>Every 50 score earns 10 account points. Save points toward GAMEZONE offers.</p></div>
-                <div class="mini-game-heading-side"><label class="mini-game-difficulty">MODE<select id="neonDifficulty"><option value="medium" selected="">Medium</option><option value="hard">Hard</option></select></label><div class="mini-game-score">SCORE <strong id="neonScore">0</strong><span>BEST <b id="neonBest">92</b></span></div></div>
+                <div class="mini-game-heading-side"><label class="mini-game-difficulty">MODE<select id="neonDifficulty"><option value="medium" selected>Medium</option><option value="hard">Hard</option></select></label><div class="mini-game-score">SCORE <strong id="neonScore">0</strong><span>BEST <b id="neonBest">0</b></span></div></div>
             </div>
             <canvas id="neonCanvas" width="720" height="360" aria-label="Neon Dodger game area"></canvas>
             <div class="mini-game-controls">
@@ -447,7 +461,9 @@ body[unresolved] {opacity: 0; display: block; overflow: hidden; position: relati
         justify-content: space-between;
         padding: 0 7%;
         background: rgba(13, 13, 13, 0.84);
-        border-bottom: 1px solid #222;
+        backdrop-filter: blur(12px);
+        -webkit-backdrop-filter: blur(12px);
+        border-bottom: 1px solid rgba(255, 255, 255, 0.12);
         position: sticky;
         top: 0;
         z-index: 100;
@@ -1649,6 +1665,13 @@ body[unresolved] {opacity: 0; display: block; overflow: hidden; position: relati
     body.light .loyalty-offer-guide { background:#f0fdf4; color:#475569; border-color:#bbf7d0; }
     body.light .loyalty-offer-guide strong, body.light .loyalty-game-badge { color:#00b862; }
     @media(max-width:600px) { .currency-setting span { display:none; }.currency-setting select { max-width:67px; padding:8px 3px; } }
+    /* PASSES & COINS */
+    .pass-art { position: relative; height: 150px; display: flex; align-items: center; justify-content: center; border-radius: 14px 14px 0 0; overflow: hidden; }
+    .pass-art .cover-tag { position: absolute; left: 13px; bottom: 13px; color: #fff; font-size: 11px; font-weight: 800; letter-spacing: 1px; text-shadow: 0 1px 4px #000; }
+    .pass-emoji { font-size: 64px; filter: drop-shadow(0 6px 14px rgba(0,0,0,.35)); }
+    .passes-teaser { text-align: center; }
+    .passes-teaser p { margin: 10px 0 22px; opacity: .8; }
+    .passes-section .passes-sub { margin-top: 48px; }
 </style>
 
     <!-- FIREBASE MODULE & DOM LOGIC -->
@@ -1681,7 +1704,7 @@ body[unresolved] {opacity: 0; display: block; overflow: hidden; position: relati
         const app = initializeApp(firebaseConfig);
         const auth = getAuth(app);
         const googleProvider = new GoogleAuthProvider();
-        const githubProvider = new GithubAuthProvider(); let oauthPopupInProgress = false;
+        const githubProvider = new GithubAuthProvider();
 
         // DOM Elements
         const searchInput = document.getElementById("searchInput");
@@ -1899,7 +1922,7 @@ body[unresolved] {opacity: 0; display: block; overflow: hidden; position: relati
                 alert(action + " needs an approved website address.\n\nOpen this page through http://localhost (not by double-clicking the HTML file), then add localhost to Firebase Console → Authentication → Settings → Authorized domains. If you are using a hosted site, add that site's domain instead.");
                 return;
             }
-            if (code === "auth/cancelled-popup-request") { alert(action + " was interrupted because another sign-in popup replaced it. Click once and wait for sign-in to finish."); return; } if (code === "auth/popup-blocked") { alert(action + " was blocked by your browser. Allow pop-ups for eyadahm92011.github.io, then try again."); return; } if (code === "auth/popup-closed-by-user") { alert(action + " was closed before sign-in finished. Complete sign-in and leave the window open until GAMEZONE returns."); return; } if (code.includes("operation-not-allowed")) {
+            if (code.includes("operation-not-allowed")) {
                 alert(action + " is not enabled yet. In Firebase Console, open Authentication → Sign-in method and enable this provider.");
                 return;
             }
@@ -1935,7 +1958,7 @@ body[unresolved] {opacity: 0; display: block; overflow: hidden; position: relati
         // Google Sign-In
         googleLoginBtn.addEventListener("click", async () => {
             try {
-                if (oauthPopupInProgress) return; oauthPopupInProgress = true; googleLoginBtn.disabled = true; githubLoginBtn.disabled = true; try { await signInWithPopup(auth, googleProvider); } finally { oauthPopupInProgress = false; googleLoginBtn.disabled = false; githubLoginBtn.disabled = false; }
+                await signInWithPopup(auth, googleProvider);
             } catch (err) {
                 showAuthError("Google sign-in", err);
             }
@@ -1944,7 +1967,7 @@ body[unresolved] {opacity: 0; display: block; overflow: hidden; position: relati
         // GitHub Sign-In
         githubLoginBtn.addEventListener("click", async () => {
             try {
-                if (oauthPopupInProgress) return; oauthPopupInProgress = true; googleLoginBtn.disabled = true; githubLoginBtn.disabled = true; try { await signInWithPopup(auth, githubProvider); } finally { oauthPopupInProgress = false; googleLoginBtn.disabled = false; githubLoginBtn.disabled = false; }
+                await signInWithPopup(auth, githubProvider);
             } catch (err) {
                 showAuthError("GitHub sign-in", err);
             }
@@ -2373,5 +2396,5 @@ body[unresolved] {opacity: 0; display: block; overflow: hidden; position: relati
         initApp();
     </script>
 
-
-</body></html>
+</body>
+</html>
