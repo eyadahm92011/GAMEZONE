@@ -1536,6 +1536,8 @@
     /* PASSES & COINS */
     .pass-art { position: relative; height: 150px; display: flex; align-items: center; justify-content: center; border-radius: 14px 14px 0 0; overflow: hidden; }
     .pass-art .cover-tag { position: absolute; left: 13px; bottom: 13px; color: #fff; font-size: 11px; font-weight: 800; letter-spacing: 1px; text-shadow: 0 1px 4px #000; }
+    .pass-img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; z-index: 1; }
+    .pass-art .cover-tag { z-index: 2; }
     .pass-emoji { font-size: 64px; filter: drop-shadow(0 6px 14px rgba(0,0,0,.35)); }
     .back-btn { display: inline-block; margin-bottom: 22px; }
     .passes-section { padding-top: 30px; }
@@ -1543,6 +1545,34 @@
 </style>
 
     <!-- FIREBASE MODULE & DOM LOGIC -->
+    <script>
+    /* PASS IMAGES — paste a direct image link (https://...jpg/png/webp) between the quotes.
+       Leave "" to keep the colored gradient. "Free Fire (all coins)" is used for every coin card
+       that has no link of its own. */
+    const PASS_IMAGES = {
+        "Game Pass": "",
+        "PlayStation Plus": "",
+        "Xbox Live": "",
+        "Free Fire (all coins)": "",
+        "Free Fire 100 Coins": "",
+        "Free Fire 200 Coins": "",
+        "Free Fire 300 Coins": "",
+        "Free Fire 500 Coins": "",
+        "Free Fire 1000 Coins": "",
+        "Free Fire 2500 Coins": "",
+        "Free Fire 5000 Coins": ""
+    };
+    document.querySelectorAll(".pass-card").forEach(card => {
+        const name = card.dataset.name;
+        const url = PASS_IMAGES[name] || (name.startsWith("Free Fire") ? PASS_IMAGES["Free Fire (all coins)"] : "");
+        if (!url) return;
+        const img = new Image();
+        img.className = "pass-img"; img.alt = name; img.loading = "lazy"; img.referrerPolicy = "no-referrer";
+        img.onerror = () => img.remove();
+        img.src = url;
+        card.querySelector(".pass-art").prepend(img);
+    });
+    </script>
     <script type="module">
         import { initializeApp } from "https://www.gstatic.com/firebasejs/10.8.0/firebase-app.js";
         import { 
